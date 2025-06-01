@@ -1,17 +1,9 @@
 package com.kekie6.colorfulazaleas;
 
 import com.google.common.collect.ImmutableMap;
-import com.kekie6.colorfulazaleas.decorators.ColorfulTreeDecorator;
-import com.kekie6.colorfulazaleas.platform.Services;
-import com.kekie6.colorfulazaleas.registry.AzaleaBlocks;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
 import java.util.HashMap;
 
@@ -22,7 +14,6 @@ import java.util.HashMap;
 public class ColorfulAzaleas {
 
     public static final String MOD_ID = "colorfulazaleas";
-    public static final TreeDecoratorType<ColorfulTreeDecorator> COLORFUL_TREE_DECORATOR = Registry.register(BuiltInRegistries.TREE_DECORATOR_TYPE, id("colorful_tree_decorator"), new TreeDecoratorType<>(ColorfulTreeDecorator.CODEC));
 
     // The loader specific projects are able to import and use any code from the common project. This allows you to
     // write the majority of your code here and load it from your loader specific projects. This example has some

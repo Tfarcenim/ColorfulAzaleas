@@ -2,6 +2,7 @@ package com.kekie6.colorfulazaleas.registry;
 
 import com.kekie6.colorfulazaleas.*;
 import com.kekie6.colorfulazaleas.blocks.*;
+import com.kekie6.colorfulazaleas.decorators.ColorfulTreeDecorator;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.*;
 import net.minecraft.data.worldgen.features.TreeFeatures;
@@ -14,20 +15,22 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.*;
 import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.levelgen.feature.*;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
 import java.util.Optional;
 
 public class AzaleaBlocks {
 
-    public static ColorfulTree[] trees;
+    public static final TreeDecoratorType<ColorfulTreeDecorator> COLORFUL_TREE_DECORATOR = Registry.register(BuiltInRegistries.TREE_DECORATOR_TYPE, ColorfulAzaleas.id("colorful_tree_decorator"), new TreeDecoratorType<>(ColorfulTreeDecorator.CODEC));
+    public static final ColorfulTree[] trees = new ColorfulTree[AzaleaColors.values().length];
     public static final Block DROOPING_AZALEA_LEAVES = registerBlockWithItem("drooping_azalea_leaves", new DroopingLeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA_LEAVES).noCollission().sound(SoundType.CAVE_VINES)));
 
-    public static void init() {
-        trees = new ColorfulTree[AzaleaColors.values().length];
-        for (int i = 0; i < AzaleaColors.values().length; i++) {
-            trees[i] = new ColorfulTree(AzaleaColors.values()[i]);
+    static {
+        for(AzaleaColors color : AzaleaColors.values()) {
+            trees[color.ordinal()] = new ColorfulTree(color);
         }
     }
+    public static void init() {}
 
     public enum AzaleaColors {
         orange("tecal"),

@@ -2,6 +2,7 @@ package com.kekie6.colorfulazaleas;
 
 
 import com.kekie6.colorfulazaleas.registry.AzaleaBlocks;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -27,7 +28,9 @@ public class ColorfulAzaleasNeoforge {
     }
 
     void register(RegisterEvent event) {
-        AzaleaBlocks.init();
+        if (event.getRegistry() == BuiltInRegistries.BLOCK) {
+            AzaleaBlocks.init();
+        }
     }
 
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "colorfulazaleas:walnut_azalea_trapdoor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_walnut_azalea_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "colorfulazaleas:walnut_azalea_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_walnut_azalea_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "colorfulazaleas:walnut_azalea_trapdoor"
+    ]
+  }
+}

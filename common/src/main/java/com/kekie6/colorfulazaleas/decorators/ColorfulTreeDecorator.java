@@ -1,6 +1,6 @@
 package com.kekie6.colorfulazaleas.decorators;
 
-import com.kekie6.colorfulazaleas.ColorfulAzaleas;
+import com.kekie6.colorfulazaleas.registry.AzaleaBlocks;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -41,7 +41,7 @@ public class ColorfulTreeDecorator extends TreeDecorator {
 
     @Override
     protected TreeDecoratorType<?> type() {
-        return ColorfulAzaleas.COLORFUL_TREE_DECORATOR;
+        return AzaleaBlocks.COLORFUL_TREE_DECORATOR;
     }
 
     @Override

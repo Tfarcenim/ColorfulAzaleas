@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "colorfulazaleas:titanium_azalea_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "colorfulazaleas:titanium_azalea_button"
+  }
+}
