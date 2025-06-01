@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bark",
+  "key": {
+    "#": {
+      "item": "colorfulazaleas:stripped_tecal_azalea_log"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "colorfulazaleas:stripped_tecal_azalea_wood"
+  }
+}

@@ -1,20 +1,23 @@
 package com.kekie6.colorfulazaleas.registry;
 
-import com.kekie6.colorfulazaleas.*;
-import com.kekie6.colorfulazaleas.blocks.*;
+import com.kekie6.colorfulazaleas.ColorfulAzaleas;
+import com.kekie6.colorfulazaleas.blocks.DroopingLeavesBlock;
 import com.kekie6.colorfulazaleas.decorators.ColorfulTreeDecorator;
-import net.minecraft.core.*;
-import net.minecraft.core.registries.*;
-import net.minecraft.data.worldgen.features.TreeFeatures;
-import net.minecraft.resources.*;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.*;
-import net.minecraft.world.item.*;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
-import net.minecraft.world.level.block.state.*;
-import net.minecraft.world.level.block.state.properties.*;
-import net.minecraft.world.level.levelgen.feature.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
 import java.util.Optional;
@@ -112,6 +115,9 @@ public class AzaleaBlocks {
         public final Block pressure_plate;
         public final Block button;
 
+        public final TagKey<Block> logBlocksTag;
+        public final TagKey<Item> logItemsTag;
+
         public WoodSet(AzaleaColors color) {
             this.name = color.title;
 
@@ -128,6 +134,9 @@ public class AzaleaBlocks {
             this.trapdoor = registerBlockWithItem(name + "_azalea_trapdoor", new TrapDoorBlock(BLOCK_SET_TYPE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_TRAPDOOR)));
             this.pressure_plate = registerBlockWithItem(name + "_azalea_pressure_plate", new PressurePlateBlock(BLOCK_SET_TYPE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PRESSURE_PLATE)));
             this.button = registerBlockWithItem(name + "_azalea_button", new ButtonBlock(BLOCK_SET_TYPE, 30, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_BUTTON)));
+
+            logBlocksTag = TagKey.create(Registries.BLOCK,ColorfulAzaleas.id(name + "_azalea_logs"));
+            logItemsTag = TagKey.create(Registries.ITEM,ColorfulAzaleas.id(name + "_azalea_logs"));
 
             ColorfulAzaleas.addStrippable(log, stripped_log);
             ColorfulAzaleas.addStrippable(wood, stripped_wood);
