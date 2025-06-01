@@ -56,7 +56,7 @@ public class AzaleaBlocks {
         public final Block droopingLeaves;
 
         public ColorfulTree(AzaleaColors color) {
-            this.name = color.title;
+            this.name = color.name();
             this.woodSet = new WoodSet(color);
             this.azaleaLeaves = registerBlockWithItem(name + "_azalea_leaves", new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA_LEAVES)));
             this.floweringLeaves = registerBlockWithItem(name + "_flowering_azalea_leaves", new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA_LEAVES)));
