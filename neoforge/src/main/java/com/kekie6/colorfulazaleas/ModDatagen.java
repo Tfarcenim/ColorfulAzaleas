@@ -110,7 +110,7 @@ public class ModDatagen {
                 tag(BlockTags.FLOWER_POTS).add(tree.pottedSapling);
                 tag(BlockTags.FLOWERS).add(tree.sapling,tree.floweringLeaves);
                 tag(BlockTags.LOGS_THAT_BURN).addTag(wood.logBlocksTag);
-                tag(BlockTags.LEAVES).add(tree.azaleaLeaves,tree.floweringLeaves,tree.azaleaLeaves);
+                tag(BlockTags.LEAVES).add(tree.azaleaLeaves,tree.floweringLeaves,tree.bloomingLeaves);
                 tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(wood.log);
                 tag(BlockTags.PLANKS).add(wood.planks);
                 tag(BlockTags.SAPLINGS).add(tree.sapling);
@@ -206,6 +206,10 @@ public class ModDatagen {
         @Override
         protected void addTranslations() {
 
+            addDefaultBlock(AzaleaBlocks.DROOPING_AZALEA_LEAVES);
+
+            add("itemGroup.colorfulazaleas.colorful_azaleas","Colorful Azaleas");
+
             for (AzaleaBlocks.ColorfulTree tree : AzaleaBlocks.trees) {
                 addDefaultBlock(tree.azaleaLeaves);
                 addDefaultBlock(tree.floweringLeaves);
@@ -221,10 +225,12 @@ public class ModDatagen {
                 addDefaultBlock(woodSet.wood);
                 addDefaultBlock(woodSet.stripped_wood);
 
+                addDefaultBlock(woodSet.button);
                 addDefaultBlock(woodSet.door);
                 addDefaultBlock(woodSet.fence);
                 addDefaultBlock(woodSet.fence_gate);
                 addDefaultBlock(woodSet.planks);
+                addDefaultBlock(woodSet.pressure_plate);
                 addDefaultBlock(woodSet.slab);
                 addDefaultBlock(woodSet.stairs);
                 addDefaultBlock(woodSet.trapdoor);
