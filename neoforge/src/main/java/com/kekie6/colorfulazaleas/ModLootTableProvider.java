@@ -68,7 +68,7 @@ public class ModLootTableProvider extends LootTableProvider {
                 dropSelf(wood.stripped_wood);
 
                 dropSelf(wood.button);
-                this.add(wood.door, this::createDoorTable);;
+                this.add(wood.door, this::createDoorTable);
                 dropSelf(wood.fence);
                 dropSelf(wood.fence_gate);
                 dropSelf(wood.planks);

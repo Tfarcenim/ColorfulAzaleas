@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-02T05:19:35.7906842	Tags for minecraft:block mod id colorfulazaleas
+// 1.21.1	2025-06-02T10:14:23.170382	Tags for minecraft:block mod id colorfulazaleas
 e7f22de307a7cc34a61d7318b7229c493962b8e2 data/colorfulazaleas/tags/block/azule_azalea_logs.json
 30f867ad4cedca52103bb5f74e9ca7209ee17067 data/colorfulazaleas/tags/block/bright_azalea_logs.json
 e45057487d739cf0597378cbf9e6ed979fc86938 data/colorfulazaleas/tags/block/fiss_azalea_logs.json
@@ -6,6 +6,7 @@ e45057487d739cf0597378cbf9e6ed979fc86938 data/colorfulazaleas/tags/block/fiss_az
 205bf14a00832c9af6b34a780403dfa632ea098e data/colorfulazaleas/tags/block/tecal_azalea_logs.json
 8e0a687055bb4aeec373461a522e14f65efd6492 data/colorfulazaleas/tags/block/titanium_azalea_logs.json
 195e74e30694a4748055b1e4b0f7aaf7ce7eedc4 data/colorfulazaleas/tags/block/walnut_azalea_logs.json
+ae37f8ed26ecd42a3cdcc2af60137e02a4fb51a4 data/c/tags/block/flowering_azaleas.json
 f78a0d5cf0cd6799b1ef992d893653c123cc74ae data/minecraft/tags/block/fence_gates.json
 17b7e2f788e8c1a297b16cc88b782dfdd92e0901 data/minecraft/tags/block/flowers.json
 14d63a9bbf985459faf63ece509c1156dc4cbf04 data/minecraft/tags/block/flower_pots.json
