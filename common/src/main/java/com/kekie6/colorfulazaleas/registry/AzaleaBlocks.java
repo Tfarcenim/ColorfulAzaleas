@@ -1,6 +1,7 @@
 package com.kekie6.colorfulazaleas.registry;
 
 import com.kekie6.colorfulazaleas.ColorfulAzaleas;
+import com.kekie6.colorfulazaleas.blocks.ColorfulAzaleaBlock;
 import com.kekie6.colorfulazaleas.blocks.DroopingLeavesBlock;
 import com.kekie6.colorfulazaleas.decorators.ColorfulTreeDecorator;
 import net.minecraft.core.Registry;
@@ -27,6 +28,9 @@ public class AzaleaBlocks {
     public static final TreeDecoratorType<ColorfulTreeDecorator> COLORFUL_TREE_DECORATOR = Registry.register(BuiltInRegistries.TREE_DECORATOR_TYPE, ColorfulAzaleas.id("colorful_tree_decorator"), new TreeDecoratorType<>(ColorfulTreeDecorator.CODEC));
     public static final ColorfulTree[] trees = new ColorfulTree[AzaleaColors.values().length];
     public static final Block DROOPING_AZALEA_LEAVES = registerBlockWithItem("drooping_azalea_leaves", new DroopingLeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA_LEAVES).noCollission().sound(SoundType.CAVE_VINES)));
+
+    //public static final TagKey<Block> AZELEA
+
 
     static {
         for(AzaleaColors color : AzaleaColors.values()) {
@@ -70,11 +74,11 @@ public class AzaleaBlocks {
             this.droopingLeaves = registerBlockWithItem(name + "_drooping_azalea_leaves", new DroopingLeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA_LEAVES).noCollission().sound(SoundType.CAVE_VINES)));
 
             ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey = ResourceKey.create(Registries.CONFIGURED_FEATURE, ColorfulAzaleas.id(name));
-            this.sapling = registerBlockWithItem(name + "_azalea_sapling", new SaplingBlock(new TreeGrower(        name,
+            this.sapling = registerBlockWithItem(name + "_flowering_azalea", new ColorfulAzaleaBlock(new TreeGrower(name,
                     Optional.empty(),
                     Optional.of(configuredFeatureKey),
                     Optional.empty()), BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA).noOcclusion()));
-            this.pottedSapling = registerBlock("potted_" + name + "_azalea_sapling", new FlowerPotBlock(this.sapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.POTTED_AZALEA)));
+            this.pottedSapling = registerBlock("potted_" + name + "_flowering_azalea_bush", new FlowerPotBlock(this.sapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.POTTED_AZALEA)));
             
            // addBlockToAzaleaLootTable(sapling);
             //CompostingChanceRegistry.INSTANCE.add(sapling, 0.65F);

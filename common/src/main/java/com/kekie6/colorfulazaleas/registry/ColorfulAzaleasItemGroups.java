@@ -40,11 +40,13 @@ public class ColorfulAzaleasItemGroups {
             .title(Component.translatable("itemGroup.colorfulazaleas.colorful_azaleas"))
             .build();
 
-    public static void register() {
+    static {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
                 ColorfulAzaleas.id("colorful_azaleas"),
                 CREATIVE_MODE_TAB
         );
     }
+
+    public static void register() {}
 
 }
