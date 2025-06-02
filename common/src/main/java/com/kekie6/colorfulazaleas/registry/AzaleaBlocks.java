@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
+import java.util.Locale;
 import java.util.Optional;
 
 public class AzaleaBlocks {
@@ -29,7 +31,8 @@ public class AzaleaBlocks {
     public static final ColorfulTree[] trees = new ColorfulTree[AzaleaColors.values().length];
     public static final Block DROOPING_AZALEA_LEAVES = registerBlockWithItem("drooping_azalea_leaves", new DroopingLeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA_LEAVES).noCollission().sound(SoundType.CAVE_VINES)));
 
-    //public static final TagKey<Block> AZELEA
+    public static final TagKey<Block> FLOWERING_AZELEAS_BLOCK = TagKey.create(Registries.BLOCK,ResourceLocation.fromNamespaceAndPath("c","flowering_azaleas"));
+    public static final TagKey<Item> FLOWERING_AZELEAS_ITEM = TagKey.create(Registries.ITEM,ResourceLocation.fromNamespaceAndPath("c","flowering_azaleas"));
 
 
     static {
@@ -49,16 +52,18 @@ public class AzaleaBlocks {
         white("titanium");
 
         final String title;
+        final DyeColor color;
 
         AzaleaColors(String title) {
             this.title = title;
+            color = DyeColor.valueOf(name().toUpperCase(Locale.ROOT));
         }
     }
 
     public static class ColorfulTree {
         public final String name;
         public final WoodSet woodSet;
-        public final Block sapling;
+        public final ColorfulAzaleaBlock sapling;
         public final Block pottedSapling;
         public final LeavesBlock azaleaLeaves;
         public final LeavesBlock floweringLeaves;
@@ -77,7 +82,7 @@ public class AzaleaBlocks {
             this.sapling = registerBlockWithItem(name + "_flowering_azalea", new ColorfulAzaleaBlock(new TreeGrower(name,
                     Optional.empty(),
                     Optional.of(configuredFeatureKey),
-                    Optional.empty()), BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA).noOcclusion()));
+                    Optional.empty()), BlockBehaviour.Properties.ofLegacyCopy(Blocks.AZALEA).noOcclusion(),color.color));
             this.pottedSapling = registerBlock("potted_" + name + "_flowering_azalea_bush", new FlowerPotBlock(this.sapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.POTTED_AZALEA)));
             
            // addBlockToAzaleaLootTable(sapling);

@@ -2,21 +2,25 @@ package com.kekie6.colorfulazaleas;
 
 import com.kekie6.colorfulazaleas.registry.AzaleaBlocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.network.chat.ComponentContents;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -38,6 +42,8 @@ public class ModDatagen {
         generator.addProvider(event.includeServer(),new ItemTags(output,lookup,blockTagsProvider.contentsGetter(),helper));
         generator.addProvider(event.includeClient(),new Lang(output));
 
+        generator.addProvider(event.includeClient(),new BlockStates(output,helper));
+
         generator.addProvider(event.includeServer(),ModLootTableProvider.create(output,lookup));
     }
 
@@ -50,12 +56,12 @@ public class ModDatagen {
         @Override
         protected void buildRecipes(RecipeOutput recipeOutput) {
             for (AzaleaBlocks.ColorfulTree tree : AzaleaBlocks.trees) {
-                AzaleaBlocks.WoodSet wood = tree.woodSet;
-                generateRecipes(wood,recipeOutput);
+                generateRecipes(tree,recipeOutput);
             }
         }
 
-        static void generateRecipes(AzaleaBlocks.WoodSet woodSet,RecipeOutput output) {
+        static void generateRecipes(AzaleaBlocks.ColorfulTree tree,RecipeOutput output) {
+            AzaleaBlocks.WoodSet woodSet = tree.woodSet;
             buttonBuilder(woodSet.button,Ingredient.of(woodSet.planks)).unlockedBy(getHasName(woodSet.planks), has(woodSet.planks)).save(output);
             doorBuilder(woodSet.door,Ingredient.of(woodSet.planks)).unlockedBy(getHasName(woodSet.planks), has(woodSet.planks)).save(output);
             fenceBuilder(woodSet.fence,Ingredient.of(woodSet.planks)).unlockedBy(getHasName(woodSet.planks), has(woodSet.planks)).save(output);
@@ -71,6 +77,12 @@ public class ModDatagen {
             planksFromLog(output,woodSet.planks, woodSet.logItemsTag, 4);
             woodFromLogs(output, woodSet.wood, Blocks.CHERRY_LOG);
             woodFromLogs(output,woodSet.stripped_wood, woodSet.stripped_log);
+
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,tree.sapling).requires(AzaleaBlocks.FLOWERING_AZELEAS_ITEM)
+                    .requires(DyeItem.byColor(tree.sapling.dyeColor))
+                    .unlockedBy("has_azalea",has(AzaleaBlocks.FLOWERING_AZELEAS_ITEM))
+                    .save(output);
+
            // woodenBoat(output, Items.CHERRY_BOAT, Blocks.CHERRY_PLANKS);
            // chestBoat(output, Items.CHERRY_CHEST_BOAT, Items.CHERRY_BOAT);
         }
@@ -85,11 +97,12 @@ public class ModDatagen {
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             for (AzaleaBlocks.ColorfulTree tree : AzaleaBlocks.trees) {
+                tag(AzaleaBlocks.FLOWERING_AZELEAS_BLOCK).add(tree.sapling);
                 AzaleaBlocks.WoodSet wood = tree.woodSet;
                 tag(wood.logBlocksTag).add(wood.log,wood.stripped_log,wood.wood,wood.stripped_wood);
                 tag(BlockTags.FENCE_GATES).add(wood.fence_gate);
                 tag(BlockTags.FLOWER_POTS).add(tree.pottedSapling);
-                tag(BlockTags.FLOWERS).add(tree.sapling);
+                tag(BlockTags.FLOWERS).add(tree.sapling,tree.floweringLeaves);
                 tag(BlockTags.LOGS_THAT_BURN).addTag(wood.logBlocksTag);
                 tag(BlockTags.LEAVES).add(tree.azaleaLeaves,tree.floweringLeaves,tree.azaleaLeaves);
                 tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(wood.log);
@@ -106,6 +119,37 @@ public class ModDatagen {
         }
     }
 
+    public static class BlockStates extends BlockStateProvider {
+
+        public BlockStates(PackOutput output,ExistingFileHelper exFileHelper) {
+            super(output, ColorfulAzaleas.MOD_ID, exFileHelper);
+        }
+
+        //{
+        //  "parent": "colorfulazaleas:block/template_colorful_azalea",
+        //  "textures": {
+        //    "side": "colorfulazaleas:block/blue_azalea_sapling_side",
+        //    "top": "colorfulazaleas:block/blue_azalea_sapling_top",
+        //    "plant": "colorfulazaleas:block/blue_azalea_sapling_bush"
+        //  },
+        //  "render_type": "cutout"
+        //}
+
+        @Override
+        protected void registerStatesAndModels() {
+            for (AzaleaBlocks.ColorfulTree tree : AzaleaBlocks.trees) {
+                String name = BuiltInRegistries.BLOCK.getKey(tree.sapling).getPath();
+                simpleBlockWithItem(tree.sapling,models().withExistingParent(name,modLoc("block/template_colorful_azalea"))
+                        .texture("side",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_side"))
+                        .texture("top",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_top"))
+                        .texture("bish",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_bush"))
+
+                );
+                AzaleaBlocks.WoodSet wood = tree.woodSet;
+            }
+        }
+    }
+
     public static class ItemTags extends ItemTagsProvider {
 
         public ItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags,
@@ -115,6 +159,7 @@ public class ModDatagen {
 
         @Override
         protected void addTags(HolderLookup.Provider provider) {
+            copy(AzaleaBlocks.FLOWERING_AZELEAS_BLOCK,AzaleaBlocks.FLOWERING_AZELEAS_ITEM);
             for (AzaleaBlocks.ColorfulTree tree : AzaleaBlocks.trees) {
                 AzaleaBlocks.WoodSet wood = tree.woodSet;
                 copy(wood.logBlocksTag,wood.logItemsTag);

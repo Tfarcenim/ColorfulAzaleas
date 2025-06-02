@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.AzaleaBlock;
 import net.minecraft.world.level.block.grower.TreeGrower;
@@ -13,11 +14,13 @@ public class ColorfulAzaleaBlock extends AzaleaBlock {
 
     private final TreeGrower grower;
     private final MapCodec<? extends AzaleaBlock> codec;
+    public final DyeColor dyeColor;
 
-    public ColorfulAzaleaBlock(TreeGrower grower, Properties properties) {
+    public ColorfulAzaleaBlock(TreeGrower grower, Properties properties, DyeColor dyeColor) {
         super(properties);
         this.grower = grower;
-        codec = simpleCodec(properties1 -> new ColorfulAzaleaBlock(grower,properties1));
+        codec = simpleCodec(properties1 -> new ColorfulAzaleaBlock(grower,properties1,dyeColor));
+        this.dyeColor = dyeColor;
     }
 
     @Override
