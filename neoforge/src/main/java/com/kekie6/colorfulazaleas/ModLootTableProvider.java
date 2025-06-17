@@ -76,6 +76,8 @@ public class ModLootTableProvider extends LootTableProvider {
                 add(wood.slab, this::createSlabItemTable);
                 dropSelf(wood.stairs);
                 dropSelf(wood.trapdoor);
+                dropSelf(wood.sign);
+                dropSelf(wood.hanging_sign);
             }
         }
 

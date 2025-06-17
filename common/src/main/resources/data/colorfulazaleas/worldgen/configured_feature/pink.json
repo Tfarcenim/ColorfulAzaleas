@@ -65,22 +65,6 @@
     },
     "decorators": [
       {
-        "type": "minecraft:attached_to_leaves",
-        "probability": 1,
-        "exclusion_radius_xz": 0,
-        "exclusion_radius_y": 1,
-        "required_empty_blocks": 1,
-        "block_provider": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "colorfulazaleas:pink_blooming_azalea_leaves"
-          }
-        },
-        "directions": [
-          "down"
-        ]
-      },
-      {
         "type": "colorfulazaleas:colorful_tree_decorator",
         "leaf_block": {
           "type": "minecraft:simple_state_provider",
@@ -88,10 +72,10 @@
             "Name": "colorfulazaleas:pink_drooping_azalea_leaves"
           }
         },
-        "log_block": {
+        "blooming_leaves": {
           "type": "minecraft:simple_state_provider",
           "state": {
-            "Name": "colorfulazaleas:bright_azalea_log"
+            "Name": "colorfulazaleas:pink_blooming_azalea_leaves"
           }
         }
       }

@@ -10,15 +10,16 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.network.chat.ComponentContents;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.TranslatableContents;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -121,6 +122,10 @@ public class ModDatagen {
                 tag(BlockTags.WOODEN_SLABS).add(wood.slab);
                 tag(BlockTags.WOODEN_STAIRS).add(wood.stairs);
                 tag(BlockTags.WOODEN_TRAPDOORS).add(wood.trapdoor);
+                tag(BlockTags.STANDING_SIGNS).add(wood.sign);
+                tag(BlockTags.WALL_SIGNS).add(wood.wall_sign);
+                tag(BlockTags.CEILING_HANGING_SIGNS).add(wood.hanging_sign);
+                tag(BlockTags.WALL_HANGING_SIGNS).add(wood.wall_hanging_sign);
             }
         }
     }
@@ -176,7 +181,35 @@ public class ModDatagen {
                                 .texture("plant",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_bush")));
 
                 AzaleaBlocks.WoodSet wood = tree.woodSet;
+                //signBlockWithItem(wood.sign,wood.wall_sign);
             }
+        }
+
+        public void signBlockWithItem(StandingSignBlock signBlock,WallSignBlock wallSignBlock) {
+            String name = name(signBlock);
+            iconTexture(name,modLoc("item/"+name));
+        }
+
+        public void hangingSignBlock(CeilingHangingSignBlock signBlock, WallHangingSignBlock wallSignBlock, ResourceLocation texture) {
+            ModelFile sign = models().sign(name(signBlock), texture);
+            hangingSignBlock(signBlock, wallSignBlock, sign);
+        }
+
+        private ResourceLocation key(Block block) {
+            return BuiltInRegistries.BLOCK.getKey(block);
+        }
+
+        private String name(Block block) {
+            return this.key(block).getPath();
+        }
+
+        public void hangingSignBlock(CeilingHangingSignBlock signBlock, WallHangingSignBlock wallSignBlock, ModelFile sign) {
+            simpleBlock(signBlock, sign);
+            simpleBlock(wallSignBlock, sign);
+        }
+
+        void iconTexture(String path, ResourceLocation texture) {
+            itemModels().singleTexture(path, mcLoc("item/generated"), "layer0", texture);
         }
     }
 

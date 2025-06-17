@@ -7,13 +7,14 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
 @Mod(ColorfulAzaleas.MOD_ID)
 public class ColorfulAzaleasNeoforge {
 
     public ColorfulAzaleasNeoforge(IEventBus eventBus, Dist dist) {
-
+        //BoatTypesForge.init();
         // This method is invoked by the NeoForge mod loader when it is ready
         // to load your mod. You can access NeoForge and Common code in this
         // project.
@@ -26,6 +27,11 @@ public class ColorfulAzaleasNeoforge {
         ColorfulAzaleas.init();
         eventBus.addListener(ModDatagen::gather);
         eventBus.addListener(this::register);
+        eventBus.addListener(this::addTypes);
+    }
+
+    void addTypes(BlockEntityTypeAddBlocksEvent event) {
+        ColorfulAzaleas.addBlocks(event::modify);
     }
 
     void register(RegisterEvent event) {

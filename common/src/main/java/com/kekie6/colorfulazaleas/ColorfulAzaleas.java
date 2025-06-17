@@ -1,11 +1,15 @@
 package com.kekie6.colorfulazaleas;
 
 import com.google.common.collect.ImmutableMap;
+import com.kekie6.colorfulazaleas.registry.AzaleaBlocks;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.HashMap;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 // This class is part of the common project meaning it is shared between all supported loaders. Code written here can only
 // import and access the vanilla codebase, libraries used by vanilla, and optionally third party libraries that provide
@@ -30,6 +34,17 @@ public class ColorfulAzaleas {
     }
 
     public static void setup() {
+    }
+
+    public static void addBlocks(BiConsumer<BlockEntityType<?>,Block> consumer) {
+        for (AzaleaBlocks.ColorfulTree tree : AzaleaBlocks.trees) {
+            AzaleaBlocks.WoodSet woodSet = tree.woodSet;
+            consumer.accept(BlockEntityType.SIGN,woodSet.sign);
+            consumer.accept(BlockEntityType.SIGN,woodSet.wall_sign);
+
+            consumer.accept(BlockEntityType.HANGING_SIGN,woodSet.hanging_sign);
+            consumer.accept(BlockEntityType.HANGING_SIGN,woodSet.wall_hanging_sign);
+        }
     }
 
     public static void addStrippable(Block block,Block stripped) {

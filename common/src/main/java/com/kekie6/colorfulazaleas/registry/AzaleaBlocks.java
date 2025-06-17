@@ -4,16 +4,14 @@ import com.kekie6.colorfulazaleas.ColorfulAzaleas;
 import com.kekie6.colorfulazaleas.blocks.ColorfulAzaleaBlock;
 import com.kekie6.colorfulazaleas.blocks.DroopingLeavesBlock;
 import com.kekie6.colorfulazaleas.decorators.ColorfulTreeDecorator;
+import com.kekie6.colorfulazaleas.platform.Services;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,7 +20,6 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
-import java.util.Locale;
 import java.util.Optional;
 
 public class AzaleaBlocks {
@@ -41,24 +38,6 @@ public class AzaleaBlocks {
         }
     }
     public static void init() {}
-
-    public enum AzaleaColors {
-        orange("tecal"),
-        yellow("fiss"),
-        red("roze"),
-        blue("azule"),
-        pink("bright"),
-        purple("walnut"),
-        white("titanium");
-
-        final String title;
-        final DyeColor color;
-
-        AzaleaColors(String title) {
-            this.title = title;
-            color = DyeColor.valueOf(name().toUpperCase(Locale.ROOT));
-        }
-    }
 
     public static class ColorfulTree {
         public final String name;
@@ -94,22 +73,8 @@ public class AzaleaBlocks {
     public static class WoodSet {
         public final String name;
 
-        public static final BlockSetType BLOCK_SET_TYPE = new BlockSetType(ColorfulAzaleas.id("colorful_azaleas").toString(),
-                true,
-                true,
-                true,
-                BlockSetType.PressurePlateSensitivity.EVERYTHING,
-                SoundType.CHERRY_WOOD,
-                SoundEvents.CHERRY_WOOD_DOOR_CLOSE,
-                SoundEvents.CHERRY_WOOD_DOOR_OPEN,
-                SoundEvents.CHERRY_WOOD_TRAPDOOR_CLOSE,
-                SoundEvents.CHERRY_WOOD_TRAPDOOR_OPEN,
-                SoundEvents.CHERRY_WOOD_PRESSURE_PLATE_CLICK_OFF,
-                SoundEvents.CHERRY_WOOD_PRESSURE_PLATE_CLICK_ON,
-                SoundEvents.CHERRY_WOOD_BUTTON_CLICK_OFF,
-                SoundEvents.CHERRY_WOOD_BUTTON_CLICK_ON);
-        public static final WoodType WOOD_TYPE = new WoodType(BLOCK_SET_TYPE.name(), BLOCK_SET_TYPE);
-
+        public final BlockSetType blockSetType;
+        public final WoodType woodType;
         public final Block log;
         public final Block wood;
         public final Block stripped_log;
@@ -123,13 +88,25 @@ public class AzaleaBlocks {
         public final Block trapdoor;
         public final Block pressure_plate;
         public final Block button;
+        public final StandingSignBlock sign;
+        public final WallSignBlock wall_sign;
+        public final Block hanging_sign;
+        public final Block wall_hanging_sign;
+
+        public final SignItem sign_item;
+        public final HangingSignItem hanging_sign_item;
+
+        public final Item boat;
+        public final Item chest_boat;
 
         public final TagKey<Block> logBlocksTag;
         public final TagKey<Item> logItemsTag;
 
         public WoodSet(AzaleaColors color) {
             this.name = color.title;
-
+            blockSetType = new BlockSetType(ColorfulAzaleas.id(name+"_azelea").toString());
+            woodType = new WoodType(blockSetType.name(),blockSetType);
+            Services.PLATFORM.registerWoodType(woodType);
             this.log = registerBlockWithItem(name + "_azalea_log", new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LOG)));
             this.wood = registerBlockWithItem(name + "_azalea_wood", new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD)));
             this.stripped_log = registerBlockWithItem("stripped_" + name + "_azalea_log", new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_LOG)));
@@ -138,11 +115,22 @@ public class AzaleaBlocks {
             this.stairs = registerBlockWithItem(name + "_azalea_stairs", new StairBlock(planks.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(planks)));
             this.slab = registerBlockWithItem(name + "_azalea_slab", new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SLAB)));
             this.fence = registerBlockWithItem(name + "_azalea_fence", new FenceBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_FENCE)));
-            this.fence_gate = registerBlockWithItem(name + "_azalea_fence_gate", new FenceGateBlock(WOOD_TYPE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_FENCE_GATE)));
-            this.door = registerBlockWithItem(name + "_azalea_door", new DoorBlock(BLOCK_SET_TYPE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_DOOR)));
-            this.trapdoor = registerBlockWithItem(name + "_azalea_trapdoor", new TrapDoorBlock(BLOCK_SET_TYPE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_TRAPDOOR)));
-            this.pressure_plate = registerBlockWithItem(name + "_azalea_pressure_plate", new PressurePlateBlock(BLOCK_SET_TYPE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PRESSURE_PLATE)));
-            this.button = registerBlockWithItem(name + "_azalea_button", new ButtonBlock(BLOCK_SET_TYPE, 30, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_BUTTON)));
+            this.fence_gate = registerBlockWithItem(name + "_azalea_fence_gate", new FenceGateBlock(woodType, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_FENCE_GATE)));
+            this.door = registerBlockWithItem(name + "_azalea_door", new DoorBlock(blockSetType, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_DOOR)));
+            this.trapdoor = registerBlockWithItem(name + "_azalea_trapdoor", new TrapDoorBlock(blockSetType, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_TRAPDOOR)));
+            this.pressure_plate = registerBlockWithItem(name + "_azalea_pressure_plate", new PressurePlateBlock(blockSetType, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PRESSURE_PLATE)));
+            this.button = registerBlockWithItem(name + "_azalea_button", new ButtonBlock(blockSetType, 30, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_BUTTON)));
+            this.sign = registerBlock(name+"_sign",new StandingSignBlock(woodType,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SIGN)));
+            this.wall_sign = registerBlock(name+"_wall_sign",new WallSignBlock(woodType,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_SIGN).dropsLike(sign)));
+
+            this.hanging_sign = registerBlock(name+"_hanging_sign",new CeilingHangingSignBlock(woodType,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_HANGING_SIGN)));
+            this.wall_hanging_sign = registerBlock(name+"_wall_hanging_sign",new CeilingHangingSignBlock(woodType,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_HANGING_SIGN).dropsLike(hanging_sign)));
+
+            this.sign_item = registerItem(name+"_sign",new SignItem(new Item.Properties(),sign,wall_sign));
+            this.hanging_sign_item = registerItem(name+"_hanging_sign",new HangingSignItem(hanging_sign,wall_hanging_sign,new Item.Properties()));
+
+            this.boat = registerItem(name+"_boat",new BoatItem(false, Services.PLATFORM.createBoatType(color),new Item.Properties()));
+            this.chest_boat = registerItem(name+"_chest_boat",new BoatItem(true, Services.PLATFORM.createBoatType(color),new Item.Properties()));
 
             logBlocksTag = TagKey.create(Registries.BLOCK,ColorfulAzaleas.id(name + "_azalea_logs"));
             logItemsTag = TagKey.create(Registries.ITEM,ColorfulAzaleas.id(name + "_azalea_logs"));
@@ -152,6 +140,13 @@ public class AzaleaBlocks {
         }
     }
 
+    public static <I extends Item> I registerItem(String name, I item) {
+        ResourceLocation resourceLocation = ColorfulAzaleas.id(name);
+        Registry.register(BuiltInRegistries.ITEM, resourceLocation, item);
+        return item;
+    }
+
+
     public static <B extends Block> B registerBlockWithItem(String name, B block) {
         ResourceLocation resourceLocation = ColorfulAzaleas.id(name);
         Registry.register(BuiltInRegistries.BLOCK, resourceLocation, block);
@@ -159,7 +154,7 @@ public class AzaleaBlocks {
         return block;
     }
 
-    public static Block registerBlock(String name, Block block) {
+    public static <B extends Block> B registerBlock(String name, B block) {
         ResourceLocation resourceLocation = ColorfulAzaleas.id(name);
         Registry.register(BuiltInRegistries.BLOCK, resourceLocation, block);
         return block;

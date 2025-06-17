@@ -1,0 +1,67 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_tecal_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "TECAL_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_fiss_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "FISS_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_roze_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "ROZE_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_azule_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "AZULE_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_bright_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "BRIGHT_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_walnut_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "WALNUT_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_titanium_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "TITANIUM_AZALEA"
+      }
+    }
+  ]
+}

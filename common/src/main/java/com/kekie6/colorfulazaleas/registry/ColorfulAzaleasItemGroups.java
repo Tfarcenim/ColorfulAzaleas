@@ -33,6 +33,10 @@ public class ColorfulAzaleasItemGroups {
                     output.accept(woodSet.trapdoor);
                     output.accept(woodSet.pressure_plate);
                     output.accept(woodSet.button);
+                    output.accept(woodSet.sign_item);
+                    output.accept(woodSet.hanging_sign_item);
+                    output.accept(woodSet.boat);
+                    output.accept(woodSet.chest_boat);
                 }
 
             })

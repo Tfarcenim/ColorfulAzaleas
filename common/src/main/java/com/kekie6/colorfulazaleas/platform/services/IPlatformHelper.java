@@ -1,5 +1,9 @@
 package com.kekie6.colorfulazaleas.platform.services;
 
+import com.kekie6.colorfulazaleas.registry.AzaleaColors;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.level.block.state.properties.WoodType;
+
 public interface IPlatformHelper {
 
     /**
@@ -33,4 +37,8 @@ public interface IPlatformHelper {
 
         return isDevelopmentEnvironment() ? "development" : "production";
     }
+
+    Boat.Type createBoatType(AzaleaColors name);
+
+    void registerWoodType(WoodType type);
 }

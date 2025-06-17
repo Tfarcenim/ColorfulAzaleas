@@ -88,7 +88,7 @@
             "Name": "colorfulazaleas:white_drooping_azalea_leaves"
           }
         },
-        "log_block": {
+        "blooming_leaves": {
           "type": "minecraft:simple_state_provider",
           "state": {
             "Name": "colorfulazaleas:titanium_azalea_log"
