@@ -1,11 +1,20 @@
 {
   "values": [
+    "#colorfulazaleas:titanium_azalea_logs",
     "#colorfulazaleas:tecal_azalea_logs",
+    "#colorfulazaleas:bromelia_azalea_logs",
+    "#colorfulazaleas:lethe_azalea_logs",
     "#colorfulazaleas:fiss_azalea_logs",
-    "#colorfulazaleas:roze_azalea_logs",
-    "#colorfulazaleas:azule_azalea_logs",
+    "#colorfulazaleas:verdant_azalea_logs",
     "#colorfulazaleas:bright_azalea_logs",
+    "#colorfulazaleas:pluvial_azalea_logs",
+    "#colorfulazaleas:dusk_azalea_logs",
+    "#colorfulazaleas:cerulean_azalea_logs",
     "#colorfulazaleas:walnut_azalea_logs",
-    "#colorfulazaleas:titanium_azalea_logs"
+    "#colorfulazaleas:azule_azalea_logs",
+    "#colorfulazaleas:earthen_azalea_logs",
+    "#colorfulazaleas:pastoral_azalea_logs",
+    "#colorfulazaleas:roze_azalea_logs",
+    "#colorfulazaleas:pitch_azalea_logs"
   ]
 }

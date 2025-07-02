@@ -169,16 +169,16 @@ public class ModDatagen {
             for (AzaleaBlocks.ColorfulTree tree : AzaleaBlocks.trees) {
                 String name = BuiltInRegistries.BLOCK.getKey(tree.sapling).getPath();
                 simpleBlockWithItem(tree.sapling,models().withExistingParent(name,modLoc("block/template_colorful_azalea"))
-                        .texture("side",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_side"))
-                        .texture("top",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_top"))
-                        .texture("plant",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_bush"))
+                        .texture("side",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_side"))
+                        .texture("top",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_top"))
+                        .texture("plant",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_bush"))
 
                 );
 
                 simpleBlock(tree.pottedSapling,models().withExistingParent("potted_"+name,mcLoc("block/template_potted_azalea_bush"))
-                                .texture("side",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_side"))
-                                .texture("top",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_top"))
-                                .texture("plant",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_sapling_bush")));
+                                .texture("side",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_side"))
+                                .texture("top",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_top"))
+                                .texture("plant",modLoc("block/"+tree.sapling.dyeColor.getName()+"_azalea_bush")));
 
                 AzaleaBlocks.WoodSet wood = tree.woodSet;
                 //signBlockWithItem(wood.sign,wood.wall_sign);

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cerulean_azalea_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "colorfulazaleas:cerulean_azalea_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "colorfulazaleas:cerulean_azalea_fence"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cerulean_azalea_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "colorfulazaleas:cerulean_azalea_fence"
+    ]
+  }
+}

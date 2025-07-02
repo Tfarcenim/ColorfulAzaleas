@@ -1,11 +1,20 @@
 {
   "values": [
+    "colorfulazaleas:titanium_hanging_sign",
     "colorfulazaleas:tecal_hanging_sign",
+    "colorfulazaleas:bromelia_hanging_sign",
+    "colorfulazaleas:lethe_hanging_sign",
     "colorfulazaleas:fiss_hanging_sign",
-    "colorfulazaleas:roze_hanging_sign",
-    "colorfulazaleas:azule_hanging_sign",
+    "colorfulazaleas:verdant_hanging_sign",
     "colorfulazaleas:bright_hanging_sign",
+    "colorfulazaleas:pluvial_hanging_sign",
+    "colorfulazaleas:dusk_hanging_sign",
+    "colorfulazaleas:cerulean_hanging_sign",
     "colorfulazaleas:walnut_hanging_sign",
-    "colorfulazaleas:titanium_hanging_sign"
+    "colorfulazaleas:azule_hanging_sign",
+    "colorfulazaleas:earthen_hanging_sign",
+    "colorfulazaleas:pastoral_hanging_sign",
+    "colorfulazaleas:roze_hanging_sign",
+    "colorfulazaleas:pitch_hanging_sign"
   ]
 }

@@ -2,11 +2,38 @@
   "entries": [
     {
       "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_titanium_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "TITANIUM_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
       "name": "colorfulazaleas_tecal_azalea",
       "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
       "parameters": {
         "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
         "field": "TECAL_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_bromelia_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "BROMELIA_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_lethe_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "LETHE_AZALEA"
       }
     },
     {
@@ -20,22 +47,14 @@
     },
     {
       "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
-      "name": "colorfulazaleas_roze_azalea",
+      "name": "colorfulazaleas_verdant_azalea",
       "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
       "parameters": {
         "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
-        "field": "ROZE_AZALEA"
+        "field": "VERDANT_AZALEA"
       }
     },
-    {
-      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
-      "name": "colorfulazaleas_azule_azalea",
-      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
-      "parameters": {
-        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
-        "field": "AZULE_AZALEA"
-      }
-    },
+
     {
       "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
       "name": "colorfulazaleas_bright_azalea",
@@ -43,6 +62,33 @@
       "parameters": {
         "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
         "field": "BRIGHT_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_dusk_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "DUSK_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_pluvial_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "PLUVIAL_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_cerulean_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "CERULEAN_AZALEA"
       }
     },
     {
@@ -56,11 +102,47 @@
     },
     {
       "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
-      "name": "colorfulazaleas_titanium_azalea",
+      "name": "colorfulazaleas_azule_azalea",
       "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
       "parameters": {
         "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
-        "field": "TITANIUM_AZALEA"
+        "field": "AZULE_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_earthen_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "EARTHEN_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_pastoral_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "PASTORAL_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_roze_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "ROZE_AZALEA"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "colorfulazaleas_pitch_azalea",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/kekie6/colorfulazaleas/BoatTypesForge",
+        "field": "PITCH_AZALEA"
       }
     }
   ]

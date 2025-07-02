@@ -1,11 +1,20 @@
 {
   "values": [
+    "colorfulazaleas:titanium_wall_sign",
     "colorfulazaleas:tecal_wall_sign",
+    "colorfulazaleas:bromelia_wall_sign",
+    "colorfulazaleas:lethe_wall_sign",
     "colorfulazaleas:fiss_wall_sign",
-    "colorfulazaleas:roze_wall_sign",
-    "colorfulazaleas:azule_wall_sign",
+    "colorfulazaleas:verdant_wall_sign",
     "colorfulazaleas:bright_wall_sign",
+    "colorfulazaleas:pluvial_wall_sign",
+    "colorfulazaleas:dusk_wall_sign",
+    "colorfulazaleas:cerulean_wall_sign",
     "colorfulazaleas:walnut_wall_sign",
-    "colorfulazaleas:titanium_wall_sign"
+    "colorfulazaleas:azule_wall_sign",
+    "colorfulazaleas:earthen_wall_sign",
+    "colorfulazaleas:pastoral_wall_sign",
+    "colorfulazaleas:roze_wall_sign",
+    "colorfulazaleas:pitch_wall_sign"
   ]
 }

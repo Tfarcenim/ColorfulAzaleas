@@ -1,11 +1,20 @@
 {
   "values": [
+    "colorfulazaleas:titanium_azalea_trapdoor",
     "colorfulazaleas:tecal_azalea_trapdoor",
+    "colorfulazaleas:bromelia_azalea_trapdoor",
+    "colorfulazaleas:lethe_azalea_trapdoor",
     "colorfulazaleas:fiss_azalea_trapdoor",
-    "colorfulazaleas:roze_azalea_trapdoor",
-    "colorfulazaleas:azule_azalea_trapdoor",
+    "colorfulazaleas:verdant_azalea_trapdoor",
     "colorfulazaleas:bright_azalea_trapdoor",
+    "colorfulazaleas:pluvial_azalea_trapdoor",
+    "colorfulazaleas:dusk_azalea_trapdoor",
+    "colorfulazaleas:cerulean_azalea_trapdoor",
     "colorfulazaleas:walnut_azalea_trapdoor",
-    "colorfulazaleas:titanium_azalea_trapdoor"
+    "colorfulazaleas:azule_azalea_trapdoor",
+    "colorfulazaleas:earthen_azalea_trapdoor",
+    "colorfulazaleas:pastoral_azalea_trapdoor",
+    "colorfulazaleas:roze_azalea_trapdoor",
+    "colorfulazaleas:pitch_azalea_trapdoor"
   ]
 }

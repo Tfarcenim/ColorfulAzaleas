@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "colorfulazaleas:earthen_azalea_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "colorfulazaleas:earthen_azalea_planks"
+  }
+}

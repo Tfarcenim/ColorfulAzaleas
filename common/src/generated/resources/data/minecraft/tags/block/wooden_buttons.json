@@ -1,11 +1,20 @@
 {
   "values": [
+    "colorfulazaleas:titanium_azalea_button",
     "colorfulazaleas:tecal_azalea_button",
+    "colorfulazaleas:bromelia_azalea_button",
+    "colorfulazaleas:lethe_azalea_button",
     "colorfulazaleas:fiss_azalea_button",
-    "colorfulazaleas:roze_azalea_button",
-    "colorfulazaleas:azule_azalea_button",
+    "colorfulazaleas:verdant_azalea_button",
     "colorfulazaleas:bright_azalea_button",
+    "colorfulazaleas:pluvial_azalea_button",
+    "colorfulazaleas:dusk_azalea_button",
+    "colorfulazaleas:cerulean_azalea_button",
     "colorfulazaleas:walnut_azalea_button",
-    "colorfulazaleas:titanium_azalea_button"
+    "colorfulazaleas:azule_azalea_button",
+    "colorfulazaleas:earthen_azalea_button",
+    "colorfulazaleas:pastoral_azalea_button",
+    "colorfulazaleas:roze_azalea_button",
+    "colorfulazaleas:pitch_azalea_button"
   ]
 }

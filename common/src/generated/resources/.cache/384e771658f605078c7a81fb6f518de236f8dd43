@@ -1,9 +1,18 @@
-// 1.21.1	2025-06-02T10:14:23.1648777	Tags for minecraft:item mod id colorfulazaleas
+// 1.21.1	2025-07-02T00:59:09.8635286	Tags for minecraft:item mod id colorfulazaleas
 e7f22de307a7cc34a61d7318b7229c493962b8e2 data/colorfulazaleas/tags/item/azule_azalea_logs.json
 30f867ad4cedca52103bb5f74e9ca7209ee17067 data/colorfulazaleas/tags/item/bright_azalea_logs.json
+d656dec17818d7e8d49f08b9a7727255e0b29d22 data/colorfulazaleas/tags/item/bromelia_azalea_logs.json
+c7326e5065499a431b2e89fedfd94d03e3842201 data/colorfulazaleas/tags/item/cerulean_azalea_logs.json
+f4071f6f89fa33329bd01d44b426225c901f8156 data/colorfulazaleas/tags/item/dusk_azalea_logs.json
+176499a8ebca69486059d65d69e2bdf648de2cdd data/colorfulazaleas/tags/item/earthen_azalea_logs.json
 e45057487d739cf0597378cbf9e6ed979fc86938 data/colorfulazaleas/tags/item/fiss_azalea_logs.json
+8be911281831ba345023ed84a9608e0cea7e6937 data/colorfulazaleas/tags/item/lethe_azalea_logs.json
+60fa02d5a76030bb6fcbc405350914e199af8bf1 data/colorfulazaleas/tags/item/pastoral_azalea_logs.json
+91fb6403d7aa4a3f09d5068454198109c45c9d90 data/colorfulazaleas/tags/item/pitch_azalea_logs.json
+fc82e8260ac932d5b8b4f4a4ac44c2207afe09a1 data/colorfulazaleas/tags/item/pluvial_azalea_logs.json
 1c06ffeccda3f85f4d0f2abacf3d43704a6b5381 data/colorfulazaleas/tags/item/roze_azalea_logs.json
 205bf14a00832c9af6b34a780403dfa632ea098e data/colorfulazaleas/tags/item/tecal_azalea_logs.json
 8e0a687055bb4aeec373461a522e14f65efd6492 data/colorfulazaleas/tags/item/titanium_azalea_logs.json
+b5e46a275fd3f27147e5a4e854ca3ae31d346613 data/colorfulazaleas/tags/item/verdant_azalea_logs.json
 195e74e30694a4748055b1e4b0f7aaf7ce7eedc4 data/colorfulazaleas/tags/item/walnut_azalea_logs.json
-ae37f8ed26ecd42a3cdcc2af60137e02a4fb51a4 data/c/tags/item/flowering_azaleas.json
+b3245dd4222b0295cfab47d9fb8ceebc868f0ed8 data/c/tags/item/flowering_azaleas.json

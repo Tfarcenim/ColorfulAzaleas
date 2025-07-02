@@ -1,11 +1,20 @@
 {
   "values": [
+    "colorfulazaleas:titanium_azalea_fence",
     "colorfulazaleas:tecal_azalea_fence",
+    "colorfulazaleas:bromelia_azalea_fence",
+    "colorfulazaleas:lethe_azalea_fence",
     "colorfulazaleas:fiss_azalea_fence",
-    "colorfulazaleas:roze_azalea_fence",
-    "colorfulazaleas:azule_azalea_fence",
+    "colorfulazaleas:verdant_azalea_fence",
     "colorfulazaleas:bright_azalea_fence",
+    "colorfulazaleas:pluvial_azalea_fence",
+    "colorfulazaleas:dusk_azalea_fence",
+    "colorfulazaleas:cerulean_azalea_fence",
     "colorfulazaleas:walnut_azalea_fence",
-    "colorfulazaleas:titanium_azalea_fence"
+    "colorfulazaleas:azule_azalea_fence",
+    "colorfulazaleas:earthen_azalea_fence",
+    "colorfulazaleas:pastoral_azalea_fence",
+    "colorfulazaleas:roze_azalea_fence",
+    "colorfulazaleas:pitch_azalea_fence"
   ]
 }

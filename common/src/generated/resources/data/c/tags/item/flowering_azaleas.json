@@ -1,11 +1,20 @@
 {
   "values": [
+    "colorfulazaleas:white_flowering_azalea",
     "colorfulazaleas:orange_flowering_azalea",
+    "colorfulazaleas:magenta_flowering_azalea",
+    "colorfulazaleas:light_blue_flowering_azalea",
     "colorfulazaleas:yellow_flowering_azalea",
-    "colorfulazaleas:red_flowering_azalea",
-    "colorfulazaleas:blue_flowering_azalea",
+    "colorfulazaleas:lime_flowering_azalea",
     "colorfulazaleas:pink_flowering_azalea",
+    "colorfulazaleas:gray_flowering_azalea",
+    "colorfulazaleas:light_gray_flowering_azalea",
+    "colorfulazaleas:cyan_flowering_azalea",
     "colorfulazaleas:purple_flowering_azalea",
-    "colorfulazaleas:white_flowering_azalea"
+    "colorfulazaleas:blue_flowering_azalea",
+    "colorfulazaleas:brown_flowering_azalea",
+    "colorfulazaleas:green_flowering_azalea",
+    "colorfulazaleas:red_flowering_azalea",
+    "colorfulazaleas:black_flowering_azalea"
   ]
 }

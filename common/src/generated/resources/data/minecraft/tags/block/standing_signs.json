@@ -1,11 +1,20 @@
 {
   "values": [
+    "colorfulazaleas:titanium_sign",
     "colorfulazaleas:tecal_sign",
+    "colorfulazaleas:bromelia_sign",
+    "colorfulazaleas:lethe_sign",
     "colorfulazaleas:fiss_sign",
-    "colorfulazaleas:roze_sign",
-    "colorfulazaleas:azule_sign",
+    "colorfulazaleas:verdant_sign",
     "colorfulazaleas:bright_sign",
+    "colorfulazaleas:pluvial_sign",
+    "colorfulazaleas:dusk_sign",
+    "colorfulazaleas:cerulean_sign",
     "colorfulazaleas:walnut_sign",
-    "colorfulazaleas:titanium_sign"
+    "colorfulazaleas:azule_sign",
+    "colorfulazaleas:earthen_sign",
+    "colorfulazaleas:pastoral_sign",
+    "colorfulazaleas:roze_sign",
+    "colorfulazaleas:pitch_sign"
   ]
 }
