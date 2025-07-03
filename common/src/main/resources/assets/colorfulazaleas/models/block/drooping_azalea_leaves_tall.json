@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "colorfulazaleas:block/drooping_azalea_leaves_tall",
-    "particle": "colorfulazaleas:block/drooping_azalea_leaves_tall"
-  },
-  "render_type": "cutout"
-}

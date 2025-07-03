@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "colorfulazaleas:block/earthen_azalea_planks"
+  }
+}

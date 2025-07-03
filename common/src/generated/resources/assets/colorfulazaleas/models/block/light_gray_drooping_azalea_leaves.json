@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "colorfulazaleas:block/light_gray_drooping_azalea_leaves"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_open",
+  "textures": {
+    "texture": "colorfulazaleas:block/lethe_azalea_short_door"
+  }
+}

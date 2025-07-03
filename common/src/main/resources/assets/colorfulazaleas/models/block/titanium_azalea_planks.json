@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "colorfulazaleas:block/titanium_azalea_planks",
-    "particle": "colorfulazaleas:block/titanium_azalea_planks"
-
-  }
-}

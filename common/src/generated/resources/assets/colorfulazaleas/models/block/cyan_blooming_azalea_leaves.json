@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "colorfulazaleas:block/cyan_azalea_leaves",
+    "particle": "colorfulazaleas:block/cyan_azalea_leaves",
+    "side": "colorfulazaleas:block/cyan_blooming_azalea_leaves",
+    "top": "colorfulazaleas:block/cyan_flowering_azalea_leaves"
+  }
+}

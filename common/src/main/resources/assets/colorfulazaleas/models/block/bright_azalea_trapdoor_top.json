@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_trapdoor_top",
-  "textures": {
-    "texture": "colorfulazaleas:block/bright_azalea_trapdoor"
-  },
-  "render_type": "cutout"
-}

@@ -1,20 +1,20 @@
 {
   "values": [
-    "colorfulazaleas:titanium_wall_sign",
-    "colorfulazaleas:tecal_wall_sign",
-    "colorfulazaleas:bromelia_wall_sign",
-    "colorfulazaleas:lethe_wall_sign",
-    "colorfulazaleas:fiss_wall_sign",
-    "colorfulazaleas:verdant_wall_sign",
-    "colorfulazaleas:bright_wall_sign",
-    "colorfulazaleas:pluvial_wall_sign",
-    "colorfulazaleas:dusk_wall_sign",
-    "colorfulazaleas:cerulean_wall_sign",
-    "colorfulazaleas:walnut_wall_sign",
-    "colorfulazaleas:azule_wall_sign",
-    "colorfulazaleas:earthen_wall_sign",
-    "colorfulazaleas:pastoral_wall_sign",
-    "colorfulazaleas:roze_wall_sign",
-    "colorfulazaleas:pitch_wall_sign"
+    "colorfulazaleas:titanium_azalea_wall_sign",
+    "colorfulazaleas:tecal_azalea_wall_sign",
+    "colorfulazaleas:bromelia_azalea_wall_sign",
+    "colorfulazaleas:lethe_azalea_wall_sign",
+    "colorfulazaleas:fiss_azalea_wall_sign",
+    "colorfulazaleas:verdant_azalea_wall_sign",
+    "colorfulazaleas:bright_azalea_wall_sign",
+    "colorfulazaleas:pluvial_azalea_wall_sign",
+    "colorfulazaleas:dusk_azalea_wall_sign",
+    "colorfulazaleas:cerulean_azalea_wall_sign",
+    "colorfulazaleas:walnut_azalea_wall_sign",
+    "colorfulazaleas:azule_azalea_wall_sign",
+    "colorfulazaleas:earthen_azalea_wall_sign",
+    "colorfulazaleas:pastoral_azalea_wall_sign",
+    "colorfulazaleas:roze_azalea_wall_sign",
+    "colorfulazaleas:pitch_azalea_wall_sign"
   ]
 }
